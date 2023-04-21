@@ -53,6 +53,11 @@ URacer/UserSettings/Layouts/default-2021.dwlt
 *.pdb.meta
 *.mdb.meta
 
+#Ignore all .meta file
+*.meta
+#But not source file with postfix. which is everything but a folder
+!*.*.meta
+
 # OS generated files #
 ######################
 .DS_Store
