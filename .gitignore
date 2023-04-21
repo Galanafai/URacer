@@ -45,6 +45,8 @@ ExportedObj/
 
 # Editor settings
 UserSettings/EditorUserSettings.asset
+URacer/UserSettings/EditorUserSettings.asset
+URacer/UserSettings/Layouts/default-2021.dwlt
 
 # Unity3D generated meta files
 *.pidb.meta
