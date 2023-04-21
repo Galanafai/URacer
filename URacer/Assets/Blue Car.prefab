@@ -565,6 +565,7 @@ Transform:
   - {fileID: 1666681102365317577}
   - {fileID: 1666681102005826709}
   - {fileID: 2482123032246296529}
+  - {fileID: 1770427501236749447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -756,7 +757,7 @@ MonoBehaviour:
     maxIdleThrottle: 0.8
     activeIdleRange: 0.25
     activeIdleBias: 0.25
-    canStall: 1
+    canStall: 0
     stallBias: 0.8
     stalledFrictionTorque: 25
     starterMotorBias: 0.8
@@ -854,7 +855,7 @@ MonoBehaviour:
   m_Script: {fileID: 541707468, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throttleAndBrakeMode: 0
+  throttleAndBrakeMode: 1
   brakeOnThrottleBackwards: 0
   applyClutchOnHandbrake: 1
   unlockDrivelineOnHandbrake: 1
@@ -919,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: -153239313, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showTelemetry: 1
+  showTelemetry: 0
   showSuspensionAs: 0
   loadUnits: 1
   tireData: 0
@@ -1360,8 +1361,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666681103024262061}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.226, z: -0.024}
-  m_LocalScale: {x: 1, y: 0.8875, z: 1.0875}
+  m_LocalPosition: {x: -0, y: 0.26245, z: -0.057}
+  m_LocalScale: {x: 1.05, y: 0.83203125, z: 1.0603125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1666681103023970185}
@@ -12440,6 +12441,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4376589455088697336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770427501236749447}
+  m_Layer: 8
+  m_Name: TireSmoke
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1770427501236749447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376589455088697336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1666681101516899379}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5068715728958007552
 GameObject:
   m_ObjectHideFlags: 0

@@ -1994,7 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: -153239313, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showTelemetry: 1
+  showTelemetry: 0
   showSuspensionAs: 0
   loadUnits: 0
   tireData: 0
