@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 1666681101516899384}
   - component: {fileID: 1666681101516899385}
   - component: {fileID: 1666681101516899386}
+  - component: {fileID: 5609321094686985267}
   m_Layer: 8
   m_Name: Blue Car
   m_TagString: Untagged
@@ -994,6 +995,22 @@ MonoBehaviour:
   resetVehicleKey: 13
   heightIncrement: 1.6
   resetState: 0
+--- !u!114 &5609321094686985267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666681101516899387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a62c81e6252684486d6d9957b13457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {fileID: 0}
+  end: {fileID: 0}
+  checkpoints: []
+  laps: 1
 --- !u!1 &1666681101693312000
 GameObject:
   m_ObjectHideFlags: 0
