@@ -1,0 +1,27 @@
+Привет!
+
+Расскажу о главном
+
+-Вы можете использовать этот актив в любых некоммерческих и коммерческих играх или в других целях. Перепродажа и распространение запрещены!
+-Вы можете изменить цвет каждой модели на своё усмотрение, для этого вам нужно открыть Texture(находится в папке Materials) в любом редакторе изображений.
+-Все текстуры моделей расположены на ОДНОЙ текстуре, что хорошо сказывается на производительности.]
+-Готовые модели находятся в папке Prefabs. На каждой моделе повешен Mesh Collider, Rigibody. Вы можете изменить любой префаб.
+
+Спасибо за покупку!
+Так же прошу оставить свой отзыв и оценку об этом ассете в Asset Store.
+
+Hey!
+
+I'll tell you about the main
+
+-You can use this asset in any non-commercial and commercial games, or other purposes. Resale and distribution is prohibited!
+-You can change the color of each model to your liking, for this you need to open the Texture (located in the folder
+
+Materials) in any image editor.
+-All model textures are located on ONE texture, which is good for performance.]
+-Ready models are in the Prefabs folder. Mesh Collider, Rigibody is hung on each model. You can change any
+
+prefab.
+
+Thank you for your purchase!
+I also ask you to leave your feedback and rating about this asset in the Asset Store.
