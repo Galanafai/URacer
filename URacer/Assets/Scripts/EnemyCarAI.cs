@@ -9,6 +9,9 @@ public class EnemyCarAI : MonoBehaviour
     [SerializeField] private float attackForce = 15;
     [SerializeField] private float explosionForce = 50000.0f;
     [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private float pushDuration = 100000.0f; // duration of the push in seconds
+    [SerializeField] private AudioSource chaseSound;
+
 
     private bool isMovingTowardsTarget = false; // flag to indicate whether the enemy car is currently moving towards the target
     private Vector3 targetPosition; // position towards which the enemy car will move when it is within the target's radius
@@ -18,6 +21,7 @@ public class EnemyCarAI : MonoBehaviour
 
     void Start()
     {
+        chaseSound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         GameObject playerObject = GameObject.FindGameObjectWithTag(playerTag);
         if (playerObject != null)
@@ -32,15 +36,17 @@ public class EnemyCarAI : MonoBehaviour
 
     void Update()
     {
+        
         AttackPlayer();
     }
     void Death()
     {
         // Instantiate the explosion prefab at the position of the enemy car
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+       
+        //explosionSound.Play();
         Destroy(gameObject);
         Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
-        //playerTransform.GetComponent<Rigidbody>().AddForce(directionToPlayer * attackForce * explosionForce, ForceMode.Impulse); // apply a force to push back the player
         float pushDuration = 100000.0f; // duration of the push in seconds
         float pushForce = attackForce * explosionForce; // magnitude of the push force
         StartCoroutine(PushPlayer(directionToPlayer, pushDuration, pushForce));
@@ -53,9 +59,19 @@ public class EnemyCarAI : MonoBehaviour
         playerRb.velocity = Vector3.zero;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Handle collision with player
+            Death();
+        }
+    }
+
 
     void AttackPlayer()
     {
+
         if (playerTransform == null)
         {
             return;
@@ -69,15 +85,26 @@ public class EnemyCarAI : MonoBehaviour
             {
                 isMovingTowardsTarget = true;
                 targetPosition = playerTransform.position;
+                if (!chaseSound.isPlaying)
+                {
+                    chaseSound.Play();
+                }
             }
         }
         else
         {
             isMovingTowardsTarget = false;
+            if (chaseSound.isPlaying)
+            {
+                chaseSound.Stop();
+            }
         }
 
         if (isMovingTowardsTarget)
         {
+           
+       
+            
             Vector3 playerVelocity = playerTransform.GetComponent<Rigidbody>().velocity;
             Vector3 predictedPlayerPosition = playerTransform.position + playerVelocity * (distanceToTarget / attackForce);
 
@@ -90,15 +117,7 @@ public class EnemyCarAI : MonoBehaviour
 
             
             transform.position += rotatedForward * attackForce * Time.deltaTime;
-            if (Vector3.Distance(transform.position, playerTransform.position) <= 1.0f) // if the enemy car reaches the target
-            {
-                Death();
-                /*Destroy(gameObject);
-                // destroy the enemy car
-                
-                */
-                
-            }
+            
 
         }
     }
