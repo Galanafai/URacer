@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: 87381106ea93940cfb54f5a81bfa5b1b
-labels:
-- car
-- vehicle
-- wheel
-- tire
-- physics
-- bus
-- truck
-- suspension
-- skidmark
-- pickup
-- carpaint
-- driving
+version https://git-lfs.github.com/spec/v1
+oid sha256:cba7ab907ec6ea855035691235dc6abf4e0e4b98ad17ab661402cf64cbeb8a5d
+size 177
