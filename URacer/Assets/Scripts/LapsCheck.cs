@@ -142,6 +142,6 @@ public class LapsCheck : MonoBehaviour
 
         // Best time
         string formattedBestLapTime = $"Best: {Mathf.FloorToInt(bestLapTime / 60)}:{bestLapTime % 60:00.000} - (Lap {bestLap})";
-        GUI.Label(new Rect(800, 50, 500, 550), (started) ? formattedBestLapTime : "0:00.000");
+        GUI.Label(new Rect(680, 50, 500, 550), (started) ? formattedBestLapTime : "0:00.000");
     }
 }
