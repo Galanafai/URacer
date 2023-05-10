@@ -135,13 +135,13 @@ public class LapsCheck : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.skin.label.fontSize = 50;
+        GUI.skin.label.fontSize = 30;
         // Current time
         string formattedCurrentLapTime = $"Current: {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.000} - (Lap {currentLap})";
-        GUI.Label(new Rect(100, 20, 250, 900), formattedCurrentLapTime);
+        GUI.Label(new Rect(50, 50, 500, 300), formattedCurrentLapTime);
 
         // Best time
         string formattedBestLapTime = $"Best: {Mathf.FloorToInt(bestLapTime / 60)}:{bestLapTime % 60:00.000} - (Lap {bestLap})";
-        GUI.Label(new Rect(1600, 20, 250, 900), (started) ? formattedBestLapTime : "0:00.000");
+        GUI.Label(new Rect(680, 50, 500, 550), (started) ? formattedBestLapTime : "0:00.000");
     }
 }

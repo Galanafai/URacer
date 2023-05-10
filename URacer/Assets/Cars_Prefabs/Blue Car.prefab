@@ -361,7 +361,7 @@ MonoBehaviour:
   mass: 20
   radius: 0.31
   center: {x: 0.105, y: 0, z: 0}
-  suspensionDistance: 0.15
+  suspensionDistance: 0.2
   suspensionAnchor: 0.5
   springRate: 53000
   damperRate: 3000
@@ -420,7 +420,7 @@ MonoBehaviour:
   mass: 20
   radius: 0.31
   center: {x: 0.095, y: 0, z: 0}
-  suspensionDistance: 0.15
+  suspensionDistance: 0.2
   suspensionAnchor: 0.5
   springRate: 53000
   damperRate: 3000
@@ -579,7 +579,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666681101516899387}
   serializedVersion: 2
-  m_Mass: 1403
+  m_Mass: 1900
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -629,7 +629,7 @@ MonoBehaviour:
   steeringAids:
     priority: 1
     helpMode: 1
-    helpRatio: 1
+    helpRatio: 0.5
     helpGravity: 0.4
     limitMode: 2
     limitRatio: 1
@@ -707,8 +707,8 @@ MonoBehaviour:
     preload: 0
     stiffness: 0.5
   steering:
-    maxSteerAngle: 45
-    toeAngle: 0
+    maxSteerAngle: 55
+    toeAngle: 3
     ackerman: 1
     ackermanReference: {fileID: 1666681101701017623}
     ratioReference: {fileID: 0}
@@ -1129,7 +1129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666681101693312000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.514, z: 0}
+  m_LocalPosition: {x: 0, y: 0.257, z: 0.223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   mass: 20
   radius: 0.31
   center: {x: -0.095, y: 0, z: 0}
-  suspensionDistance: 0.15
+  suspensionDistance: 0.2
   suspensionAnchor: 0.5
   springRate: 53000
   damperRate: 3000
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axle: 0
   mode: 0
-  stiffness: 0.7
+  stiffness: 0.498
   springRate: 20000
   antiRollRate: 20000
   rigidity: 0.5
@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axle: 1
   mode: 0
-  stiffness: 0.3
+  stiffness: 0.216
   springRate: 20000
   antiRollRate: 20000
   rigidity: 0.5
@@ -1586,7 +1586,7 @@ MonoBehaviour:
   mass: 20
   radius: 0.31
   center: {x: -0.105, y: 0, z: 0}
-  suspensionDistance: 0.15
+  suspensionDistance: 0.2
   suspensionAnchor: 0.5
   springRate: 53000
   damperRate: 3000
@@ -12429,7 +12429,6 @@ GameObject:
   - component: {fileID: 7836526026811697356}
   - component: {fileID: 2274599214170238984}
   - component: {fileID: 4402687419119953986}
-  - component: {fileID: 564173033}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -12516,51 +12515,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9903166, y: 1.0553432, z: 4.647195}
   m_Center: {x: 0, y: 0.77423036, z: -0.029516578}
---- !u!114 &564173033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3813935018099827526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a62c81e6252684486d6d9957b13457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 0}
-  end: {fileID: 0}
-  checkpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  laps: 3
 --- !u!1 &3895107438831077354
 GameObject:
   m_ObjectHideFlags: 0
