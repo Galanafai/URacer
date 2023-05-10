@@ -12429,7 +12429,6 @@ GameObject:
   - component: {fileID: 7836526026811697356}
   - component: {fileID: 2274599214170238984}
   - component: {fileID: 4402687419119953986}
-  - component: {fileID: 564173033}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -12516,51 +12515,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9903166, y: 1.0553432, z: 4.647195}
   m_Center: {x: 0, y: 0.77423036, z: -0.029516578}
---- !u!114 &564173033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3813935018099827526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a62c81e6252684486d6d9957b13457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 0}
-  end: {fileID: 0}
-  checkpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  laps: 3
 --- !u!1 &3895107438831077354
 GameObject:
   m_ObjectHideFlags: 0
