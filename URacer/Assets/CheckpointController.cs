@@ -107,7 +107,7 @@ public class CheckpointController : MonoBehaviour
                     bestLapTime = currentLapTime; // Because the update function has already run this frame, we need to add this line or it won't work
                 }
 
-                // currentLap++;
+                currentLap++;
                 currentCheckpoint = 0;
                 currentLapTime = 0;
                 checkpointObj = start;
