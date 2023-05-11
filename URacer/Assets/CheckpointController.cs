@@ -23,6 +23,11 @@ public class CheckpointController : MonoBehaviour
     private float bestLapTime;
     private float bestLap;
 
+    // GUI
+    private GUIStyle guiStyle = new GUIStyle();
+    Texture2D consoleBackground;
+
+
     private void Start()
     {
         currentCheckpoint = 0;
@@ -48,7 +53,7 @@ public class CheckpointController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             rb.isKinematic = true;
-            print("return key was pressed");
+            // print("return key was pressed");
             Vector3 pos = checkpointObj.transform.position + new Vector3(0,0,0);
             Vector3 position =  Vector3.MoveTowards(pos, rb.position, 1f * Time.fixedDeltaTime);
             rb.MovePosition(position);
@@ -82,7 +87,7 @@ public class CheckpointController : MonoBehaviour
         // If collided with checkpoint
         if (other.CompareTag("Checkpoint"))
         {
-            print("Collided with checkpoint");
+            // print("Collided with checkpoint");
 
             GameObject thisCheckpoint = other.gameObject;
 
@@ -100,7 +105,7 @@ public class CheckpointController : MonoBehaviour
             // If at last checkpoint
             if (currentCheckpoint == checkpoints.Length)
             {
-                print("AT LAST CHECKPOINT");
+                // print("AT LAST CHECKPOINT");
                 if (currentLapTime < bestLapTime)
                 {
                     bestLap = currentLap;
@@ -127,28 +132,40 @@ public class CheckpointController : MonoBehaviour
                 if (thisCheckpoint == checkpoints[i] && i + 1 == currentCheckpoint + 1)
                 {
                     checkpointObj = thisCheckpoint;
-                    print($"Correct Checkpoint: {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.000}");
+                    // print($"Correct Checkpoint: {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.000}");
                     currentCheckpoint++;
                 }
                 // If the checkpoint is incorrect
                 else if (thisCheckpoint == checkpoints[i] && i + 1 != currentCheckpoint + 1)
                 {
-                    print($"Incorrect checkpoint");
+                    // print($"Incorrect checkpoint");
                 }
             }
-            print($"current: {currentCheckpoint} / total: {checkpoints.Length}");
+            // print($"current: {currentCheckpoint} / total: {checkpoints.Length}");
 
         }
     }
 
     private void OnGUI()
     {
+        consoleBackground = new Texture2D(1, 1, TextureFormat.RGBAFloat, false); 
+        consoleBackground.SetPixel(0, 0, new Color((float)0.5, (float)0.5, (float)0.5, 0.4f));
+        consoleBackground.Apply();
+
+        guiStyle.fontSize = 16;
+        guiStyle.normal.textColor = Color.white;
+        guiStyle.normal.background = consoleBackground;
+        guiStyle.alignment = TextAnchor.MiddleCenter;
     //     // Current time
         string formattedCurrentLapTime = $"Current: {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.000} - (Lap {currentLap})";
-        GUI.Label(new Rect(50, 50, 250, 100), formattedCurrentLapTime);
+        GUI.Label(new Rect(50, 50, 250, 50), formattedCurrentLapTime, guiStyle);
 
     //     // Best time
         string formattedBestLapTime = $"Best: {Mathf.FloorToInt(bestLapTime / 60)}:{bestLapTime % 60:00.000} - (Lap {bestLap})";
-        GUI.Label(new Rect(50, 150, 250, 100), (started) ? formattedBestLapTime : "0:00.000");
+        GUI.Label(new Rect(50, 100, 250, 50), (started) ? formattedBestLapTime : "0:00.000", guiStyle);
+
+        // Checkpoints
+        string formattedCheckpoints = $"Checkpoints: {currentCheckpoint} / {checkpoints.Length}";
+        GUI.Label(new Rect(50, 150, 250, 50), formattedCheckpoints, guiStyle);
     }
 }
