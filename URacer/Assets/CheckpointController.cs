@@ -6,17 +6,16 @@ public class CheckpointController : MonoBehaviour
 {
     [Header("Points")]
     public GameObject start;
-    public GameObject end;
     public GameObject[] checkpoints;
-    private GameObject curCheckpoint;
+    private GameObject checkpointObj;
     Rigidbody rb;
 
     [Header("Settings")]
-    public float laps = 100;
+    public int laps = 100;
 
     [Header("Information")]
     private int currentCheckpoint;
-    private float currentLap;
+    private int currentLap;
     private bool started;
     private bool finished;
 
@@ -35,7 +34,7 @@ public class CheckpointController : MonoBehaviour
         currentLapTime = 0;
         bestLapTime = 0;
         bestLap = 0;
-        curCheckpoint = start;
+        checkpointObj = start;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -50,12 +49,12 @@ public class CheckpointController : MonoBehaviour
         {
             rb.isKinematic = true;
             print("return key was pressed");
-            Vector3 pos = curCheckpoint.transform.position + new Vector3(0,0,0);
+            Vector3 pos = checkpointObj.transform.position + new Vector3(0,0,0);
             Vector3 position =  Vector3.MoveTowards(pos, rb.position, 1f * Time.fixedDeltaTime);
             rb.MovePosition(position);
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
-            rb.rotation = curCheckpoint.transform.rotation;
+            rb.rotation = checkpointObj.transform.rotation;
             Invoke("setKine", 0.1f);
         }
 
@@ -80,74 +79,54 @@ public class CheckpointController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // If collided with checkpoint
         if (other.CompareTag("Checkpoint"))
         {
+            print("Collided with checkpoint");
+
             GameObject thisCheckpoint = other.gameObject;
 
-            // Started the race
+            // Start the race
             if (thisCheckpoint == start && !started)
             {
-                curCheckpoint = thisCheckpoint;
+                checkpointObj = thisCheckpoint;
                 print("Started");
                 started = true;
                 currentLapTime = 0;
-            }
-            // Ended the lap or race
-            // else if (thisCheckpoint == end && started)
+            }  
+            // If less than total laps
+            // else if (currentLap < laps)
             // {
-                // If all the laps are finished, end the race
-                // if (currentLap == laps)
-                // {
-                //     if (currentCheckpoint == checkpoints.Length)
-                //     {
-                //         if (currentLapTime < bestLapTime)
-                //         {
-                //             bestLap = currentLap;
-                //         }
-
-                //         finished = true;
-                //         currentCheckpoint = 0;
-                //         print("Finished");
-                //     }
-                //     else
-                //     {
-                //         print("Did not go through all checkpoints");
-                //     }
-                // }
-                // If all laps are not finished, start a new lap
-                /*else*/ 
-                if (currentLap < laps)
+            // If at last checkpoint
+            if (currentCheckpoint == checkpoints.Length)
+            {
+                print("AT LAST CHECKPOINT");
+                if (currentLapTime < bestLapTime)
                 {
-                    if (currentCheckpoint == checkpoints.Length)
-                    {
-                        if (currentLapTime < bestLapTime)
-                        {
-                            bestLap = currentLap;
-                            bestLapTime = currentLapTime; // Because the update function has already run this frame, we need to add this line or it won't work
-                        }
-
-                        currentLap++;
-                        currentCheckpoint = 0;
-                        currentLapTime = 0;
-                        print($"Started lap {currentLap}");
-                    }
-                    else
-                    {
-                        print($"Did not go through all checkpoints");
-                    }
+                    bestLap = currentLap;
+                    bestLapTime = currentLapTime; // Because the update function has already run this frame, we need to add this line or it won't work
                 }
+
+                currentLap++;
+                currentCheckpoint = 0;
+                currentLapTime = 0;
+                checkpointObj = start;
+                print($"Started lap {currentLap}");
+            }
+            else
+            {
+                print($"Did not go through all checkpoints");
+            }
+            // }
             // }
 
             // Loop through the checkpoints to compare and check which one the player touched
             for (int i = 0; i < checkpoints.Length; i++)
             {
-                if (finished)
-                    return;
-
                 // If the checkpoint is correct
                 if (thisCheckpoint == checkpoints[i] && i + 1 == currentCheckpoint + 1)
                 {
-                    curCheckpoint = thisCheckpoint;
+                    checkpointObj = thisCheckpoint;
                     print($"Correct Checkpoint: {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.000}");
                     currentCheckpoint++;
                 }
@@ -157,7 +136,7 @@ public class CheckpointController : MonoBehaviour
                     print($"Incorrect checkpoint");
                 }
             }
-            print($"{currentCheckpoint} / {checkpoints.Length}");
+            print($"current: {currentCheckpoint} / total: {checkpoints.Length}");
 
         }
     }
@@ -170,6 +149,6 @@ public class CheckpointController : MonoBehaviour
 
     //     // Best time
         string formattedBestLapTime = $"Best: {Mathf.FloorToInt(bestLapTime / 60)}:{bestLapTime % 60:00.000} - (Lap {bestLap})";
-        GUI.Label(new Rect(100, 100, 250, 100), (started) ? formattedBestLapTime : "0:00.000");
+        GUI.Label(new Rect(50, 150, 250, 100), (started) ? formattedBestLapTime : "0:00.000");
     }
 }

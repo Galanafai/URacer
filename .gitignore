@@ -10,6 +10,7 @@
 /URacer/[Ll]ogs/
 /URacer/[Mm]emoryCaptures/
 
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
@@ -49,11 +50,6 @@ URacer/UserSettings/Layouts/default-2021.dwlt
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
-
-#Ignore all .meta file
-*.meta
-#But not source file with postfix. which is everything but a folder
-!*.*.meta
 
 # OS generated files #
 ######################
