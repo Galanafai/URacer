@@ -535,7 +535,6 @@ GameObject:
   - component: {fileID: 1666681101516899391}
   - component: {fileID: 1666681101516899384}
   - component: {fileID: 1666681101516899385}
-  - component: {fileID: 1666681101516899386}
   - component: {fileID: 1982440281}
   - component: {fileID: 1982440282}
   - component: {fileID: 2977343642885897352}
@@ -982,21 +981,6 @@ MonoBehaviour:
   stalledLightsOff: {fileID: 0}
   handbrakeLightsOn: {fileID: 0}
   handbrakeLightsOff: {fileID: 0}
---- !u!114 &1666681101516899386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1666681101516899387}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1334591726, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetVehicleKey: 13
-  heightIncrement: 1.6
-  resetState: 0
 --- !u!82 &1982440281
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13039,7 +13023,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6975049e68aa35b438f6ca58ec7a4102, type: 2}
+  - {fileID: 2100000, guid: eae404e120125b74eb8ee1ab04d07ae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
