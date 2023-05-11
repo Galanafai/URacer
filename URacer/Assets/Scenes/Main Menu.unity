@@ -1221,6 +1221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6019923299333041483, guid: 5d8fa9c09068d944fb0c371d6500242e, type: 3}
+    - {fileID: -673501823945610397, guid: 5d8fa9c09068d944fb0c371d6500242e, type: 3}
+    - {fileID: 1933578617, guid: 5d8fa9c09068d944fb0c371d6500242e, type: 3}
+    - {fileID: 1392637031, guid: 5d8fa9c09068d944fb0c371d6500242e, type: 3}
+    - {fileID: 446380441, guid: 5d8fa9c09068d944fb0c371d6500242e, type: 3}
+    - {fileID: 73675006, guid: 5d8fa9c09068d944fb0c371d6500242e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5d8fa9c09068d944fb0c371d6500242e, type: 3}
 --- !u!1 &1081235360
 GameObject:
@@ -26417,7 +26422,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &114906800644936621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35516,18 +35521,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114173851760721469}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Demo1Scene2
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 224029682835524125}
         m_TargetAssemblyTypeName: Play_BO, Assembly-CSharp
         m_MethodName: PlayBarrenOasis
