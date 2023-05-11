@@ -5,7 +5,7 @@ URacer is a time trial racing game where enemies are grey cars that can explode 
 The goal: Get the best time and avoid these enemies.
 
 Credits:
-Aaron Edlebeck: Car design and coding. Reset system creation
+Aaron Edlebeck: Car design and coding. Reset system creation.
 Raul Delgado: Track design and checkpoint system creation.
 Galanafai Windross: Enemy ai design and coding, and version control.
  
