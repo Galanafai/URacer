@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 1666681101516899386}
   - component: {fileID: 1982440281}
   - component: {fileID: 1982440282}
+  - component: {fileID: 2977343642885897352}
   m_Layer: 8
   m_Name: Blue Car
   m_TagString: Player
@@ -988,7 +989,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666681101516899387}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1334591726, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
   m_Name: 
@@ -1105,6 +1106,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionSound: {fileID: 1982440281}
+--- !u!114 &2977343642885897352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666681101516899387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d98473b312d4715bb8644acdb6ee13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {fileID: 0}
+  end: {fileID: 0}
+  checkpoints: []
+  laps: 1
 --- !u!1 &1666681101693312000
 GameObject:
   m_ObjectHideFlags: 0
